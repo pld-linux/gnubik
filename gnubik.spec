@@ -9,6 +9,7 @@ Source0:	ftp://ftp.gnu.org/gnu/gnubik/%{name}-%{version}.tar.gz
 # Source0-md5:	156b2f58c2bbd32ec48085789699ed1d
 URL:		http://www.gnu.org/software/gnubik/
 BuildRequires:	gtkglext-devel
+BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
