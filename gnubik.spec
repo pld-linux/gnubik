@@ -2,11 +2,12 @@ Summary:	GNUbik - an interactive, graphical, single player puzzle
 Summary(pl):	GNUbik - interaktywna, graficzna uk³adanka dla jednego gracza
 Name:		gnubik
 Version:	2.2
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications/Games
 Source0:	ftp://ftp.gnu.org/gnu/gnubik/%{name}-%{version}.tar.gz
 # Source0-md5:	156b2f58c2bbd32ec48085789699ed1d
+Patch0:		%{name}-locale_names.patch
 URL:		http://www.gnu.org/software/gnubik/
 BuildRequires:	gtkglext-devel
 BuildRequires:	pkgconfig
@@ -26,6 +27,9 @@ ka¿da ¶ciana zawiera tylko jeden kolor, uk³adanka jest rozwi±zana.
 
 %prep
 %setup -q
+
+mv -f po/{no,nb}.po
+mv -f po/fr{_FR,}.po
 
 %build
 %configure
