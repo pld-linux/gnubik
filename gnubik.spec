@@ -2,7 +2,7 @@ Summary:	GNUbik - an interactive, graphical, single player puzzle
 Summary(pl):	GNUbik - interaktywna, graficzna uk³adanka dla jednego gracza
 Name:		gnubik
 Version:	2.2
-Release:	0.1
+Release:	1
 License:	GPL
 Group:		X11/Applications/Games
 Source0:	ftp://ftp.gnu.org/gnu/gnubik/%{name}-%{version}.tar.gz
