@@ -1,5 +1,5 @@
-Summary:	GNUbik is an interactive, graphical, single player puzzle
-Summary(pl):	GNUbik jest interaktywn±, graficzn± gr± w puzzle dla pojedynczego gracza
+Summary:	GNUbik - an interactive, graphical, single player puzzle
+Summary(pl):	GNUbik - interaktywna, graficzna uk³adanka dla jednego gracza
 Name:		gnubik
 Version:	2.1
 Release:	0.1
@@ -18,8 +18,10 @@ You have to manipulate the cube using the mouse. When each face shows
 only one colour, the game is solved.
 
 %description -l pl
-GNUbik jest interaktywn±, graficzn± gr± w puzzle dla pojedynczego
-gracza.
+GNUbik jest interaktywn±, graficzn± uk³adank± dla jednego gracza. Ten
+wolnodostêpny program renderuje obraz kostki, takiej jak wynaleziona
+przez Erno Rubika. Trzeba manipulowaæ kostk± przy u¿yciu myszy. Kiedy
+ka¿da ¶ciana zawiera tylko jeden kolor, uk³adanka jest rozwi±zana.
 
 %prep
 %setup -q
@@ -51,4 +53,4 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/%{name}
 %{_mandir}/man6/*
-%{_infodir}/*
+%{_infodir}/*.info*
