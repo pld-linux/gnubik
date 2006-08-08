@@ -27,7 +27,7 @@ ka¿da ¶ciana zawiera tylko jeden kolor, uk³adanka jest rozwi±zana.
 
 %prep
 %setup -q
-%patch -p1
+%patch0 -p1
 
 mv -f po/{no,nb}.po
 mv -f po/fr{_FR,}.po
