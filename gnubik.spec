@@ -1,5 +1,5 @@
 Summary:	GNUbik - an interactive, graphical, single player puzzle
-Summary(pl.UTF-8):   GNUbik - interaktywna, graficzna układanka dla jednego gracza
+Summary(pl.UTF-8):	GNUbik - interaktywna, graficzna układanka dla jednego gracza
 Name:		gnubik
 Version:	2.2
 Release:	3
