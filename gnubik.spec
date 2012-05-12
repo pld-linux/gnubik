@@ -1,17 +1,21 @@
 Summary:	GNUbik - an interactive, graphical, single player puzzle
 Summary(pl.UTF-8):	GNUbik - interaktywna, graficzna układanka dla jednego gracza
 Name:		gnubik
-Version:	2.3
+Version:	2.4
 Release:	1
 License:	GPL
 Group:		X11/Applications/Games
 Source0:	http://ftp.gnu.org/gnu/gnubik/%{name}-%{version}.tar.gz
-# Source0-md5:	6d0f596f6b78d64e8ce02951ff536f8e
+# Source0-md5:	cbafcd93d9ab31695d18358b68cd72c9
 Patch0:		%{name}-locale_names.patch
 URL:		http://www.gnu.org/software/gnubik/
-BuildRequires:	guile-devel >= 5:1.8.0
+BuildRequires:	OpenGL-devel
+BuildRequires:	OpenGL-GLU-devel
+BuildRequires:	gtk+2-devel >= 2.20
 BuildRequires:	gtkglext-devel
+BuildRequires:	guile-devel >= 5:1.8.0
 BuildRequires:	pkgconfig
+Requires:	hicolor-icon-theme
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -28,15 +32,10 @@ każda ściana zawiera tylko jeden kolor, układanka jest rozwiązana.
 
 %prep
 %setup -q
-%patch0 -p1
-
-mv -f po/{no,nb}.po
-mv -f po/pt{_PT,}.po
 
 %build
 %configure
 %{__make}
-%{__make} update-gmo -C po
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -59,5 +58,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README TODO
 %attr(755,root,root) %{_bindir}/*
+%{_desktopdir}/gnubik.desktop
 %{_datadir}/%{name}
 %{_infodir}/*.info*
+%{_iconsdir}/hicolor/*/apps/gnubik.png
