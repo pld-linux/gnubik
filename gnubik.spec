@@ -7,7 +7,6 @@ License:	GPL
 Group:		X11/Applications/Games
 Source0:	http://ftp.gnu.org/gnu/gnubik/%{name}-%{version}.tar.gz
 # Source0-md5:	cbafcd93d9ab31695d18358b68cd72c9
-Patch0:		%{name}-locale_names.patch
 URL:		http://www.gnu.org/software/gnubik/
 BuildRequires:	OpenGL-devel
 BuildRequires:	OpenGL-GLU-devel
