@@ -8,13 +8,15 @@ Group:		X11/Applications/Games
 Source0:	http://ftp.gnu.org/gnu/gnubik/%{name}-%{version}.tar.gz
 # Source0-md5:	cbafcd93d9ab31695d18358b68cd72c9
 URL:		http://www.gnu.org/software/gnubik/
-BuildRequires:	OpenGL-devel
 BuildRequires:	OpenGL-GLU-devel
+BuildRequires:	OpenGL-devel
 BuildRequires:	gtk+2-devel >= 2.20
 BuildRequires:	gtkglext-devel
 BuildRequires:	guile-devel >= 5:1.8.0
 BuildRequires:	pkgconfig
-Requires:	hicolor-icon-theme
+Requires(post,postun):	gtk-update-icon-cache
+Requires(post,postun):	hicolor-icon-theme
+
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -47,11 +49,13 @@ rm -rf $RPM_BUILD_ROOT
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post	-p	/sbin/postshell
--/usr/sbin/fix-info-dir -c %{_infodir}
+%post
+[ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
+%update_icon_cache hicolor
 
-%postun	-p	/sbin/postshell
--/usr/sbin/fix-info-dir -c %{_infodir}
+%postun
+[ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
+%update_icon_cache hicolor
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
